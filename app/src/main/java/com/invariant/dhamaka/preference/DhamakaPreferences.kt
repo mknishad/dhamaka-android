@@ -9,9 +9,9 @@ import com.invariant.dhamaka.util.Constants
  * Created by invar on 07-Nov-17.
  */
 
-const val PREFERENCE_TITLE = "DhamakePreferences"
+const val PREFERENCE_TITLE = "DhamakaPreferences"
 
-class DhamakePreferences(context: Context) {
+class DhamakaPreferences(context: Context) {
     private val preferences: SharedPreferences =
         context.getSharedPreferences(PREFERENCE_TITLE, Context.MODE_PRIVATE)
     private val editor: SharedPreferences.Editor = preferences.edit()

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Dhamaka</string>
     <string name="powered_by_invariant_telecom">Powered by - Invariant Telecom</string>
+    <string name="effortless_purchase">Effortless Purchase</string>
+    <string name="intro_screen_one_description">Buy any product from any place, at any time, very easily with Dhamaka</string>
+    <string name="exclusive_products">Exclusive Products</string>
+    <string name="intro_screen_two_description">Dhamaka with trendy products for the highest customer service</string>
+    <string name="smooth_transaction">Smooth Transaction</string>
+    <string name="intro_screen_three_description">Transaction process is very easy as anyone can pay easily</string>
 </resources>

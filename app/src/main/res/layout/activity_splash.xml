@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:text="@string/powered_by_invariant_telecom"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
+        android:fontFamily="@font/rubik_medium"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
