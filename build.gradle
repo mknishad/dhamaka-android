@@ -19,11 +19,12 @@ buildscript {
         version_okhttp = '4.2.2'
         version_glide = '4.10.0'
         version_gson = '2.8.6'
+        version_material_intro = '2.0.0'
     }
     repositories {
         google()
         jcenter()
-        
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'

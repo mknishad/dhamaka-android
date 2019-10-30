@@ -1,7 +1,8 @@
-package com.invariant.dhamaka
+package com.invariant.dhamaka.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.invariant.dhamaka.R
 
 class MainActivity : AppCompatActivity() {
 

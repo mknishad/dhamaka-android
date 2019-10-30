@@ -69,4 +69,12 @@ dependencies {
 
     // Gson
     implementation "com.google.code.gson:gson:$version_gson"
+
+    // App Intro
+    //implementation 'com.github.AppIntro:AppIntro:5.1.0'
+
+    // Material Intro
+    //implementation "com.heinrichreimersoftware:material-intro:$version_material_intro"
+
+    implementation 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
 }
