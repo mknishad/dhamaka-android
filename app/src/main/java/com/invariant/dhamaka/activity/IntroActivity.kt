@@ -3,25 +3,21 @@ package com.invariant.dhamaka.activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.bumptech.glide.Glide.init
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.databinding.ActivityIntroBinding
 import com.invariant.dhamaka.preference.DhamakaPreferences
 import org.jetbrains.anko.startActivity
-import org.w3c.dom.Text
 
 class IntroActivity : AppCompatActivity() {
 
@@ -33,14 +29,11 @@ class IntroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
-        binding.lifecycleOwner = this
 
         init()
     }
 
     private fun init() {
-        preferences = DhamakaPreferences(this)
 
         /*if (!preferences.isFirstTimeLaunch()) {
             launchHomeScreen()
@@ -51,6 +44,11 @@ class IntroActivity : AppCompatActivity() {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
+        binding.lifecycleOwner = this
+
+        preferences = DhamakaPreferences(this)
 
         layouts = arrayOf(
             R.layout.activity_intro_1,
@@ -111,6 +109,7 @@ class IntroActivity : AppCompatActivity() {
 
     private fun launchHomeScreen() {
         startActivity<MainActivity>()
+        finish()
     }
 
     private fun addBottomDots(currentPage: Int) {

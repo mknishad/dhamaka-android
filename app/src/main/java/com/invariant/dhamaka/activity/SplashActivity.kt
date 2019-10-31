@@ -1,7 +1,7 @@
 package com.invariant.dhamaka.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.preference.DhamakaPreferences
 import org.jetbrains.anko.startActivity
@@ -18,8 +18,11 @@ class SplashActivity : AppCompatActivity() {
 
         if (preferences.isFirstTimeLaunch()) {
             startActivity<IntroActivity>()
+            //TODO 1: set first time launch to false
         } else {
             startActivity<MainActivity>()
         }
+
+        finish()
     }
 }
