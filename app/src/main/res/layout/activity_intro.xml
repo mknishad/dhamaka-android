@@ -18,8 +18,10 @@
             android:id="@+id/layoutDots"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dots_height"
-            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="@dimen/dots_margin_bottom"
+            android:layout_above="@id/btn_skip"
             android:gravity="center"
             android:orientation="horizontal" />
 
