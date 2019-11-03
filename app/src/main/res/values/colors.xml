@@ -6,17 +6,18 @@
     <color name="colorSecondary">#363F4D</color>
     <color name="colorText">#7D838C</color>
     <color name="colorTextDark">#37404E</color>
+    <color name="colorIntroButton">#E1E2E1</color>
     <color name="colorBackgroundLight">#F7F7F7</color>
 
     <!-- dots inactive colors -->
-    <color name="dot_dark_screen1">#d1395c</color>
-    <color name="dot_dark_screen2">#14a895</color>
-    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen1">#E1E2E1</color>
+    <color name="dot_dark_screen2">#E1E2E1</color>
+    <color name="dot_dark_screen3">#E1E2E1</color>
 
     <!-- dots active colors -->
-    <color name="dot_light_screen1">#f98da5</color>
-    <color name="dot_light_screen2">#8cf9eb</color>
-    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen1">#EB3E32</color>
+    <color name="dot_light_screen2">#EB3E32</color>
+    <color name="dot_light_screen3">#EB3E32</color>
 
     <array name="array_dot_active">
         <item>@color/dot_light_screen1</item>

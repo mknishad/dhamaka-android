@@ -4,12 +4,11 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.PagerAdapter
@@ -24,7 +23,7 @@ class IntroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroBinding
     private lateinit var preferences: DhamakaPreferences
     private lateinit var layouts: Array<Int>
-    private lateinit var dots: ArrayList<TextView>
+    private lateinit var dots: ArrayList<ImageView>
     private lateinit var adapter: MyViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -113,22 +112,21 @@ class IntroActivity : AppCompatActivity() {
     }
 
     private fun addBottomDots(currentPage: Int) {
-        dots = ArrayList(layouts.size)
+        dots = ArrayList()
 
         val colorsActive = resources.getIntArray(R.array.array_dot_active)
         val colorsInactive = resources.getIntArray(R.array.array_dot_inactive)
 
         binding.layoutDots.removeAllViews()
-        for (i in dots.indices) {
-            dots[i] = TextView(this)
-            dots[i].text = Html.fromHtml("&#8226;")
-            dots[i].textSize = 35f
-            dots[i].setTextColor(colorsInactive[currentPage])
+        for (i in 0..2) {
+            dots.add(ImageView(this))
+            dots[i].setImageResource(R.drawable.ic_slider_dot)
+            dots[i].setPadding(8, 0, 8, 0)
             binding.layoutDots.addView(dots[i])
         }
 
         if (dots.isNotEmpty())
-            dots[currentPage].setTextColor(colorsActive[currentPage])
+            dots[currentPage].setImageResource(R.drawable.ic_slider_dot_red)
     }
 
     /**
