@@ -1,6 +1,7 @@
 package com.invariant.dhamaka.activity
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.preference.DhamakaPreferences
@@ -16,13 +17,16 @@ class SplashActivity : AppCompatActivity() {
 
         preferences = DhamakaPreferences(this)
 
-        if (preferences.isFirstTimeLaunch()) {
-            startActivity<IntroActivity>()
-            //TODO: set first time launch to false
-        } else {
-            startActivity<MainActivity>()
-        }
+        Handler().postDelayed({
+            if (preferences.isFirstTimeLaunch()) {
+                startActivity<IntroActivity>()
+                //TODO: set first time launch to false
+            } else {
+                startActivity<MainActivity>()
+            }
 
-        finish()
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            finish()
+        }, 1000)
     }
 }
