@@ -16,4 +16,12 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ToolbarStyle">
+        <item name="android:theme">?attr/actionBarTheme</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+<!--        <item name="android:elevation">4dp</item>-->
+    </style>
+
 </resources>

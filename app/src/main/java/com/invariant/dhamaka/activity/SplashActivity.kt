@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
 
         if (preferences.isFirstTimeLaunch()) {
             startActivity<IntroActivity>()
-            //TODO 1: set first time launch to false
+            //TODO: set first time launch to false
         } else {
             startActivity<MainActivity>()
         }
