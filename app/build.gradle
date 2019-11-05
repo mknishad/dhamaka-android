@@ -36,8 +36,9 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$version_appcompat"
     implementation "androidx.core:core-ktx:$version_ktx"
     implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.appcompat:appcompat:$version_appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
     testImplementation "junit:junit:$version_junit"
     androidTestImplementation "androidx.test.ext:junit:$version_ext_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$version_espresso"
@@ -72,11 +73,12 @@ dependencies {
     // Gson
     implementation "com.google.code.gson:gson:$version_gson"
 
-    // App Intro
-    //implementation 'com.github.AppIntro:AppIntro:5.1.0'
+    // Sliding Intro Screen
+    implementation "com.matthew-tamlin:sliding-intro-screen:$version_sliding_intro"
 
-    // Material Intro
-    //implementation "com.heinrichreimersoftware:material-intro:$version_material_intro"
+    // Carousel View
+    implementation "com.synnapps:carouselview:$version_carousel_view"
 
-    implementation 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
+    // Picasso
+    implementation "com.squareup.picasso:picasso:$version_picasso"
 }

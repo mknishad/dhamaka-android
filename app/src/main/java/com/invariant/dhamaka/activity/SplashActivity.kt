@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             if (preferences.isFirstTimeLaunch()) {
                 startActivity<IntroActivity>()
-                //TODO: set first time launch to false
+                preferences.setFirstTimeLaunch(false)
             } else {
                 startActivity<MainActivity>()
             }

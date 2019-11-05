@@ -20,6 +20,10 @@ buildscript {
         version_glide = '4.10.0'
         version_gson = '2.8.6'
         version_material_intro = '2.0.0'
+        version_sliding_intro = '3.2.0'
+        version_carousel_view = '0.1.5'
+        version_picasso = '2.71828'
+        version_lifecycle_extensions = '2.1.0'
     }
     repositories {
         google()
