@@ -16,21 +16,25 @@
 
 package com.invariant.dhamaka.util
 
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import com.bumptech.glide.Glide
-import com.invariant.dhamaka.BuildConfig
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.model.Rider
-import com.mikhaellopez.circularimageview.CircularImageView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item_rider.view.*
 
-@BindingAdapter("riderItemImage")
-fun CircularImageView.setRiderItemImage(item: Rider?) {
+@BindingAdapter("productItemImage")
+fun ImageView.setRiderItemImage(item: Rider?) {
     item?.let { it ->
-        Glide.with(this)
+        /*Glide.with(this)
             .load(BuildConfig.IMAGE_URL + it.imageUrl)
             .placeholder(R.drawable.ic_account_circle_gray_200dp)
-            .into(riderImage)
+            .into(riderImage)*/
+
+        Picasso.get()
+            .load(it.imageUrl)
+            .placeholder(R.drawable.macbook_pro)
+            .into(productImageView)
     }
 }
 

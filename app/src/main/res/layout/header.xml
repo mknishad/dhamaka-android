@@ -3,6 +3,8 @@
     android:id="@+id/text"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="ALL PRODUCTS"
+    android:textSize="16sp"
+    android:fontFamily="@font/rubik_medium"
+    android:text="@string/all_products"
+    android:textColor="@color/colorPrimary"
     android:padding="8dp" />

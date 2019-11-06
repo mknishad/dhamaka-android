@@ -1,70 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-                name="rider"
-                type="com.invariant.dhamaka.model.Rider"/>
+            name="rider"
+            type="com.invariant.dhamaka.model.Rider" />
+
         <variable
-                name="clickListener"
-                type="com.invariant.dhamaka.adapter.RiderListener"/>
+            name="clickListener"
+            type="com.invariant.dhamaka.adapter.RiderListener" />
     </data>
 
-    <androidx.cardview.widget.CardView
-            android:layout_margin="4dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Ripple"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:onClick="@{() -> clickListener.onClick(rider)}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/productImageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Ripple"
-                android:onClick="@{() -> clickListener.onClick(rider)}"
-                android:orientation="vertical">
+            android:layout_height="100dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_product_item"
+            android:src="@drawable/macbook_pro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:productItemImage="@{rider}" />
 
-            <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/riderImage"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_account_circle_gray_200dp"
-                    app:riderItemImage="@{rider}"/>
+        <TextView
+            android:id="@+id/productNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{rider.name}"
+            android:textSize="12sp"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="@color/colorText"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productImageView"
+            app:layout_constraintEnd_toEndOf="@id/productImageView"
+            tools:text="MacBook Pro" />
 
-            <TextView
-                    android:id="@+id/riderNameTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/riderImage"
-                    app:layout_constraintTop_toTopOf="@id/riderImage"
-                    android:text="@{rider.name}"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:text="Hercules"
-                    app:layout_constraintBottom_toTopOf="@+id/riderPhoneTextView"/>
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:rating="4"
+            android:numStars="5"
+            style="?android:attr/ratingBarStyleSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productNameTextView"/>
 
-            <TextView
-                    android:id="@+id/riderPhoneTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintEnd_toEndOf="@+id/riderNameTextView"
-                    app:layout_constraintStart_toStartOf="@+id/riderNameTextView"
-                    app:layout_constraintTop_toBottomOf="@+id/riderNameTextView"
-                    android:text="@{rider.phone}"
-                    tools:text="+8801234567890"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/riderImage"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/productPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{rider.phone}"
+            android:textSize="12sp"
+            android:fontFamily="@font/rubik_medium"
+            android:textColor="@color/colorText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            tools:text="$50.00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

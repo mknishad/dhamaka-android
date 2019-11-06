@@ -8,6 +8,7 @@
     <color name="colorTextDark">#37404E</color>
     <color name="colorIntroButton">#E1E2E1</color>
     <color name="colorBackgroundLight">#F7F7F7</color>
+    <color name="colorProductBackground">#E7E7E7</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#E1E2E1</color>

@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.adapter.RiderAdapter
 import com.invariant.dhamaka.adapter.RiderListener
@@ -97,6 +98,14 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
             )
         )
 
+        val manager = GridLayoutManager(this, 3)
+        manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int) = when(position) {
+                0 -> 3
+                else -> 1
+            }
+        }
+        binding.allProductsRecyclerView.layoutManager = manager
         binding.allProductsRecyclerView.adapter = adapter
     }
 
