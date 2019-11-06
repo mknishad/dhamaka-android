@@ -19,17 +19,17 @@ package com.invariant.dhamaka.util
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.invariant.dhamaka.R
-import com.invariant.dhamaka.model.Rider
+import com.invariant.dhamaka.model.Product
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.list_item_rider.view.*
+import kotlinx.android.synthetic.main.list_item_product.view.*
 
 @BindingAdapter("productItemImage")
-fun ImageView.setRiderItemImage(item: Rider?) {
+fun ImageView.setRiderItemImage(item: Product?) {
     item?.let { it ->
         /*Glide.with(this)
             .load(BuildConfig.IMAGE_URL + it.imageUrl)
             .placeholder(R.drawable.ic_account_circle_gray_200dp)
-            .into(riderImage)*/
+            .into(productImageView)*/
 
         Picasso.get()
             .load(it.imageUrl)
@@ -39,7 +39,7 @@ fun ImageView.setRiderItemImage(item: Rider?) {
 }
 
 /*@BindingAdapter("riderImage")
-fun CircularImageView.setRiderImage(item: Rider?) {
+fun CircularImageView.setRiderImage(item: Product?) {
     item?.let { it ->
         Glide.with(this)
             .load(BuildConfig.IMAGE_URL + it.imageUrl)
@@ -49,7 +49,7 @@ fun CircularImageView.setRiderImage(item: Rider?) {
 }*/
 
 /*@BindingAdapter("updateRiderImage")
-fun CircularImageView.updateRiderImage(item: Rider?) {
+fun CircularImageView.updateRiderImage(item: Product?) {
     item?.let { it ->
         Glide.with(this)
             .load(BuildConfig.IMAGE_URL + it.imageUrl)

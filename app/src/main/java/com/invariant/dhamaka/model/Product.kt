@@ -1,10 +1,12 @@
 package com.invariant.dhamaka.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 import java.io.File
-import java.io.Serializable
 
-data class Rider(
+@Parcelize
+data class Product(
     var _id: String?,
     var name: String?,
     var phone: String?,
@@ -16,4 +18,4 @@ data class Rider(
     var registrationFormNumber: String?,
     var nid: String?,
     var licence: String?
-) : Serializable
+) : Parcelable

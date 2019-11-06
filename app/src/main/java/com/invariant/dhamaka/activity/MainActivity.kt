@@ -8,14 +8,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.invariant.dhamaka.R
-import com.invariant.dhamaka.adapter.RiderAdapter
-import com.invariant.dhamaka.adapter.RiderListener
+import com.invariant.dhamaka.adapter.ProductAdapter
+import com.invariant.dhamaka.adapter.ProductListener
 import com.invariant.dhamaka.databinding.ActivityMainBinding
-import com.invariant.dhamaka.model.Rider
+import com.invariant.dhamaka.model.Product
 import com.invariant.dhamaka.viewmodel.MainViewModel
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.wtf
 
@@ -67,34 +66,56 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     }
 
     private fun setupAllProductsRecyclerView() {
-        val adapter = RiderAdapter(RiderListener {rider ->
-            binding.allProductsRecyclerView.snackbar(rider.name.toString())
+        val adapter = ProductAdapter(ProductListener { product ->
+            //binding.allProductsRecyclerView.snackbar(product.name.toString())
         })
 
         adapter.addHeaderAndSubmitList(
             listOf(
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null),
-                Rider("asdfsda", "a;lflsd", "2433", null, null,
-                    null, null, null, null, null)
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1570963398800-a5c9dac212e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1515073883629-5e2924e3e106?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1570963398800-a5c9dac212e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+                    null, null, null),
+                Product("asdfsda", "a;lflsd", "2433", null, null,
+                    null,
+                    "https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80",
+                    null, null, null)
             )
         )
 

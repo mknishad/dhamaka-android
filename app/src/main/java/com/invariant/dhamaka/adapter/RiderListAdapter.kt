@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.invariant.dhamaka.R
-import com.invariant.dhamaka.databinding.ListItemRiderBinding
-import com.invariant.dhamaka.model.Rider
+import com.invariant.dhamaka.databinding.ListItemProductBinding
+import com.invariant.dhamaka.model.Product
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,14 +18,14 @@ import kotlinx.coroutines.withContext
 private val ITEM_VIEW_TYPE_HEADER = 0
 private val ITEM_VIEW_TYPE_ITEM = 1
 
-class RiderAdapter(val clickListener: RiderListener) :
-    ListAdapter<DataItem, RecyclerView.ViewHolder>(RiderDiffCallback()) {
+class ProductAdapter(val clickListener: ProductListener) :
+    ListAdapter<DataItem, RecyclerView.ViewHolder>(ProductDiffCallback()) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is ViewHolder -> {
-                val riderItem = getItem(position) as DataItem.RiderItem
-                holder.bind(riderItem.rider, clickListener)
+                val productItem = getItem(position) as DataItem.ProductItem
+                holder.bind(productItem.product, clickListener)
             }
         }
     }
@@ -41,17 +41,17 @@ class RiderAdapter(val clickListener: RiderListener) :
     override fun getItemViewType(position: Int): Int {
         return when (getItem(position)) {
             is DataItem.Header -> ITEM_VIEW_TYPE_HEADER
-            is DataItem.RiderItem -> ITEM_VIEW_TYPE_ITEM
+            is DataItem.ProductItem -> ITEM_VIEW_TYPE_ITEM
         }
     }
 
     private val adapterScope = CoroutineScope(Dispatchers.Default)
 
-    fun addHeaderAndSubmitList(list: List<Rider>?) {
+    fun addHeaderAndSubmitList(list: List<Product>?) {
         adapterScope.launch {
             val items = when (list) {
                 null -> listOf(DataItem.Header)
-                else -> listOf(DataItem.Header) + list.map { DataItem.RiderItem(it) }
+                else -> listOf(DataItem.Header) + list.map { DataItem.ProductItem(it) }
             }
             withContext(Dispatchers.Main) {
                 submitList(items)
@@ -60,9 +60,9 @@ class RiderAdapter(val clickListener: RiderListener) :
     }
 }
 
-class ViewHolder private constructor(val binding: ListItemRiderBinding) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(item: Rider, clickListener: RiderListener) {
-        binding.rider = item
+class ViewHolder private constructor(val binding: ListItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
+    fun bind(item: Product, clickListener: ProductListener) {
+        binding.product = item
         binding.clickListener = clickListener
         binding.executePendingBindings()
     }
@@ -70,7 +70,7 @@ class ViewHolder private constructor(val binding: ListItemRiderBinding) : Recycl
     companion object {
         fun from(parent: ViewGroup): ViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val binding = ListItemRiderBinding.inflate(layoutInflater, parent, false)
+            val binding = ListItemProductBinding.inflate(layoutInflater, parent, false)
             return ViewHolder(binding)
         }
     }
@@ -93,7 +93,7 @@ class TextViewHolder(view: View) : RecyclerView.ViewHolder(view) {
  * Used by ListAdapter to calculate the minimum number of changes between and old list and a new
  * list that's been passed to `submitList`.
  */
-class RiderDiffCallback : DiffUtil.ItemCallback<DataItem>() {
+class ProductDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
         return oldItem.id == newItem.id
     }
@@ -104,14 +104,14 @@ class RiderDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     }
 }
 
-class RiderListener(val clickListener: (rider: Rider) -> Unit) {
-    fun onClick(rider: Rider) = clickListener(rider)
+class ProductListener(val clickListener: (product: Product) -> Unit) {
+    fun onClick(product: Product) = clickListener(product)
 }
 
 sealed class DataItem {
-    data class RiderItem(val rider: Rider) : DataItem() {
+    data class ProductItem(val product: Product) : DataItem() {
         override val id: String
-            get() = rider._id!!
+            get() = product._id!!
     }
 
     object Header : DataItem() {
