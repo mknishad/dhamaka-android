@@ -17,6 +17,7 @@
 package com.invariant.dhamaka.util
 
 import android.widget.ImageView
+import android.widget.RatingBar
 import androidx.databinding.BindingAdapter
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.model.Product
@@ -37,6 +38,19 @@ fun ImageView.setRiderItemImage(item: Product?) {
             .into(productImageView)
     }
 }
+
+@BindingAdapter("android:rating")
+fun setRating(ratingBar: RatingBar, rating: Float) {
+    rating.let {
+        ratingBar.rating = it
+    }
+}
+
+/*@BindingAdapter("strikeThroughText")
+fun TextView.setStrikeThroughText(textView: TextView, text: String?) {
+    textView.text = text
+    textView.paintFlags = textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+}*/
 
 /*@BindingAdapter("riderImage")
 fun CircularImageView.setRiderImage(item: Product?) {

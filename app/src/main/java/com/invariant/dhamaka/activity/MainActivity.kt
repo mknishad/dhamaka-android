@@ -47,11 +47,24 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     }
 
     private fun setupCarouselView() {
-        carouselImageUrls.add("https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
-        carouselImageUrls.add("https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80")
-        carouselImageUrls.add("https://images.unsplash.com/photo-1570963398800-a5c9dac212e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
-        carouselImageUrls.add("https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
-        carouselImageUrls.add("https://images.unsplash.com/photo-1515073883629-5e2924e3e106?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")
+        carouselImageUrls.add(
+            "https://www.insurance2go.co.uk/media/1677/iphone-11.png?anchor=" +
+                    "center&mode=crop&width=390&height=360&rnd=132132898460000000"
+        )
+        carouselImageUrls.add("https://brain-images-ssl.cdn.dixons.com/0/2/10187920/u_10187920.jpg")
+        carouselImageUrls.add(
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/" +
+                    "is/ipad-pro-11-select-wifi-spacegray-201810?wid=470&hei=556&fmt=png-alpha&." +
+                    "v=1540591907088"
+        )
+        carouselImageUrls.add(
+            "https://www.att.com/catalog/en/idse/Apple/Apple%20Watch%20Series%" +
+                    "205%20-%2040mm/Space%20Black%20Stainless%20-%20Black%20Sport-hero-zoom.png"
+        )
+        carouselImageUrls.add(
+            "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imacpro-27-ret" +
+                    "ina-config-hero?wid=412&hei=352&fmt=jpeg&qlt=95&.v=1512501389796"
+        )
 
         binding.carouselView.pageCount = carouselImageUrls.size
         binding.carouselView.setImageListener { position, imageView ->
@@ -72,56 +85,68 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 
         adapter.addHeaderAndSubmitList(
             listOf(
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1570963398800-a5c9dac212e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1515073883629-5e2924e3e106?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1570963398800-a5c9dac212e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-                    null, null, null),
-                Product("asdfsda", "a;lflsd", "2433", null, null,
-                    null,
-                    "https://images.unsplash.com/photo-1482066490729-6f26115b60dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80",
-                    null, null, null)
+                Product(
+                    "1", "iPhone 11 Pro", 5.0f, 1100.0, 1050.0,
+                    "https://www.insurance2go.co.uk/media/1677/iphone-11.png?anchor=" +
+                            "center&mode=crop&width=390&height=360&rnd=132132898460000000"
+                ),
+                Product(
+                    "2", "MacBook Pro", 5.0f, 1200.0, 1150.0,
+                    "https://brain-images-ssl.cdn.dixons.com/0/2/10187920/u_10187920.jpg"
+                ),
+                Product(
+                    "3", "iPad Pro", 5.0f, 1000.0, 950.0,
+                    "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is" +
+                            "/ipad-pro-11-select-wifi-spacegray-201810?wid=470&hei=556&fmt=png-a" +
+                            "lpha&.v=1540591907088"
+                ),
+                Product(
+                    "4", "Apple Watch Series 5", 5.0f, 500.0,
+                    450.0,
+                    "https://www.att.com/catalog/en/idse/Apple/Apple%20Watch%20Series%20" +
+                            "5%20-%2040mm/Space%20Black%20Stainless%20-%20Black%20Sport-hero-zoom.png"
+                ),
+                Product(
+                    "5", "iMac Pro", 5.0f, 1500.0,
+                    1450.0,
+                    "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is" +
+                            "/imacpro-27-retina-config-hero?wid=412&hei=352&fmt=jpeg&qlt=95&.v=1" +
+                            "512501389796"
+                ),
+                Product(
+                    "1", "iPhone 11 Pro", 5.0f, 1100.0, 1050.0,
+                    "https://www.insurance2go.co.uk/media/1677/iphone-11.png?anchor=" +
+                            "center&mode=crop&width=390&height=360&rnd=132132898460000000"
+                ),
+                Product(
+                    "2", "MacBook Pro", 5.0f, 1200.0, 1150.0,
+                    "https://brain-images-ssl.cdn.dixons.com/0/2/10187920/u_10187920.jpg"
+                ),
+                Product(
+                    "3", "iPad Pro", 5.0f, 1000.0, 950.0,
+                    "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is" +
+                            "/ipad-pro-11-select-wifi-spacegray-201810?wid=470&hei=556&fmt=png-a" +
+                            "lpha&.v=1540591907088"
+                ),
+                Product(
+                    "4", "Apple Watch Series 5", 5.0f, 500.0,
+                    450.0,
+                    "https://www.att.com/catalog/en/idse/Apple/Apple%20Watch%20Series%20" +
+                            "5%20-%2040mm/Space%20Black%20Stainless%20-%20Black%20Sport-hero-zoom.png"
+                ),
+                Product(
+                    "5", "iMac Pro", 5.0f, 1500.0,
+                    1450.0,
+                    "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is" +
+                            "/imacpro-27-retina-config-hero?wid=412&hei=352&fmt=jpeg&qlt=95&.v=1" +
+                            "512501389796"
+                )
             )
         )
 
         val manager = GridLayoutManager(this, 3)
         manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-            override fun getSpanSize(position: Int) = when(position) {
+            override fun getSpanSize(position: Int) = when (position) {
                 0 -> 3
                 else -> 1
             }

@@ -28,4 +28,6 @@
     <string name="play_again">Play Again</string>
     <string name="toolbar_logo">Toolbar Logo</string>
     <string name="all_products">ALL PRODUCTS</string>
+    <string name="dollar">$</string>
+    <string name="space">\u0020</string>
 </resources>
