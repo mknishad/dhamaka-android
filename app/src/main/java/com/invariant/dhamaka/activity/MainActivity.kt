@@ -7,10 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.invariant.dhamaka.R
+import com.invariant.dhamaka.adapter.RiderAdapter
+import com.invariant.dhamaka.adapter.RiderListener
 import com.invariant.dhamaka.databinding.ActivityMainBinding
+import com.invariant.dhamaka.model.Rider
 import com.invariant.dhamaka.viewmodel.MainViewModel
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.wtf
 
@@ -34,6 +38,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         carouselImageUrls = ArrayList()
         setupToolbar()
         setupCarouselView()
+        setupAllProductsRecyclerView()
     }
 
     private fun setupToolbar() {
@@ -58,6 +63,41 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
                 .fit()
                 .into(imageView)
         }
+    }
+
+    private fun setupAllProductsRecyclerView() {
+        val adapter = RiderAdapter(RiderListener {rider ->
+            binding.allProductsRecyclerView.snackbar(rider.name.toString())
+        })
+
+        adapter.addHeaderAndSubmitList(
+            listOf(
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null),
+                Rider("asdfsda", "a;lflsd", "2433", null, null,
+                    null, null, null, null, null)
+            )
+        )
+
+        binding.allProductsRecyclerView.adapter = adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

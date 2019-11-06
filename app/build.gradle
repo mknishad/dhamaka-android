@@ -15,9 +15,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField("String", "IMAGE_URL", "\"https://buddy-images.s3.amazonaws.com/\"")
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "IMAGE_URL", "\"https://buddy-images.s3.amazonaws.com/\"")
         }
     }
 
@@ -81,4 +85,6 @@ dependencies {
 
     // Picasso
     implementation "com.squareup.picasso:picasso:$version_picasso"
+    // Circular Image View
+    implementation "com.mikhaellopez:circularimageview:$version_circular_image_view"
 }
