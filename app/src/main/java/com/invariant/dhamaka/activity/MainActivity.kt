@@ -153,6 +153,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         }
         binding.allProductsRecyclerView.layoutManager = manager
         binding.allProductsRecyclerView.adapter = adapter
+        //ViewCompat.setNestedScrollingEnabled(binding.allProductsRecyclerView, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
