@@ -11,9 +11,11 @@ import com.invariant.dhamaka.adapter.ProductAdapter
 import com.invariant.dhamaka.adapter.ProductListener
 import com.invariant.dhamaka.databinding.ActivityMainBinding
 import com.invariant.dhamaka.model.Product
+import com.invariant.dhamaka.util.Constants
 import com.invariant.dhamaka.viewmodel.MainViewModel
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.wtf
 
@@ -79,7 +81,9 @@ class MainActivity : BaseActivity(), AnkoLogger {
 
     private fun setupAllProductsRecyclerView() {
         val adapter = ProductAdapter(ProductListener { product ->
-            //binding.allProductsRecyclerView.snackbar(product.name.toString())
+            startActivity<ProductDetailsActivity>(
+                Constants.PRODUCT_ID to product._id
+            )
         })
 
         adapter.addHeaderAndSubmitList(
