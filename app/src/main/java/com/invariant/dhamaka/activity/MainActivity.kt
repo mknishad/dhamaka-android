@@ -3,7 +3,6 @@ package com.invariant.dhamaka.activity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -18,7 +17,7 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.wtf
 
-class MainActivity : AppCompatActivity(), AnkoLogger {
+class MainActivity : BaseActivity(), AnkoLogger {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainViewModel

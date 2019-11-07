@@ -9,19 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.databinding.ActivityIntroBinding
-import com.invariant.dhamaka.preference.DhamakaPreferences
 import org.jetbrains.anko.startActivity
 
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
 
     private lateinit var binding: ActivityIntroBinding
-    private lateinit var preferences: DhamakaPreferences
     private lateinit var layouts: Array<Int>
     private lateinit var dots: ArrayList<ImageView>
     private lateinit var adapter: MyViewPagerAdapter
@@ -46,8 +43,6 @@ class IntroActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
         binding.lifecycleOwner = this
-
-        preferences = DhamakaPreferences(this)
 
         layouts = arrayOf(
             R.layout.activity_intro_1,
@@ -113,9 +108,6 @@ class IntroActivity : AppCompatActivity() {
 
     private fun addBottomDots(currentPage: Int) {
         dots = ArrayList()
-
-        val colorsActive = resources.getIntArray(R.array.array_dot_active)
-        val colorsInactive = resources.getIntArray(R.array.array_dot_inactive)
 
         binding.layoutDots.removeAllViews()
         for (i in 0..2) {
