@@ -7,6 +7,7 @@
     <color name="colorText">#7D838C</color>
     <color name="colorTextDark">#37404E</color>
     <color name="colorIntroButton">#E1E2E1</color>
+    <color name="colorSeparator">#E1E2E1</color>
     <color name="colorBackgroundLight">#F7F7F7</color>
     <color name="colorProductBackground">#E7E7E7</color>
 </resources>
