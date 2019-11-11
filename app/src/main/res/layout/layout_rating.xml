@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/ratingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="4.9"
+        android:text="4.9"
+        android:fontFamily="@font/rubik_medium"
+        android:textColor="@color/colorTextDark"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/ratingSubtitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/out_of_5"
+        android:fontFamily="@font/rubik_regular"
+        android:textColor="@color/colorText"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/ratingTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ratingTextView"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalRatingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="200 Rating"
+        tools:text="200 Rating"
+        android:fontFamily="@font/rubik_regular"
+        android:textColor="@color/colorText"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/fiveStarTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/_5"
+        android:fontFamily="@font/rubik_regular"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/totalRatingTextView"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/fiveStarImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_star_yellow_24dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/fiveStarTextView"
+        app:layout_constraintStart_toEndOf="@id/fiveStarTextView"
+        app:layout_constraintBottom_toBottomOf="@id/fiveStarTextView"/>
+
+    <ProgressBar
+        android:id="@+id/fiveStarProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/fiveStarImageView"
+        app:layout_constraintEnd_toStartOf="@id/fiveStarPercentageTextView"
+        app:layout_constraintStart_toEndOf="@id/fiveStarImageView"
+        app:layout_constraintTop_toTopOf="@id/fiveStarImageView" />
+
+    <TextView
+        android:id="@+id/fiveStarPercentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        tools:text="70%"
+        android:fontFamily="@font/rubik_regular"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalRatingTextView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -331,7 +331,7 @@
                     android:text="@string/product_description"
                     android:textColor="@color/colorTextDark"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toStartOf="@+id/productDescriptionArrowImage"
+                    app:layout_constraintEnd_toStartOf="@+id/shippingArrowImage"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator4" />
 
@@ -368,6 +368,65 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator5" />
+
+                <View
+                    android:id="@+id/separator6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorSeparator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shippingTextView" />
+
+                <TextView
+                    android:id="@+id/returnTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/rubik_medium"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/product_description"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/returnArrowImage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator6" />
+
+                <ImageView
+                    android:id="@+id/returnArrowImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    app:layout_constraintBottom_toTopOf="@id/separator7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator6" />
+
+                <View
+                    android:id="@+id/separator7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorSeparator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/returnTitleTextView" />
+
+                <TextView
+                    android:id="@+id/returnTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/rubik_regular"
+                    android:text="@string/lorem_ipsum"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator7" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

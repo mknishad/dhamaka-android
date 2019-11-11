@@ -43,4 +43,6 @@
         release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
         publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="product_description">Product Description</string>
+    <string name="out_of_5">Out of 5</string>
+    <string name="_5">5</string>
 </resources>
