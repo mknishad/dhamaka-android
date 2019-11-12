@@ -65,7 +65,7 @@ class ShoppingCartActivity : BaseActivity() {
             )*/
         })
 
-        adapter.addHeaderAndSubmitList(
+        adapter.submitList(
             listOf(
                 Product(
                     "1", "iPhone 11 Pro", 5.0f, 1100.0, 1050.0,

@@ -87,6 +87,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="16dp"
                     android:padding="8dp"
+                    style="@style/Ripple"
                     android:text="@string/apply_coupon"
                     android:fontFamily="@font/rubik_medium"
                     android:textSize="18sp"
