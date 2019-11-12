@@ -50,4 +50,10 @@
     <string name="_1">1</string>
     <string name="ratings">Ratings</string>
     <string name="add_to_cart">Add To Cart</string>
+    <string name="do_you_have_a_coupon_code">Do you have a coupon code?</string>
+    <string name="apply_coupon">Apply Coupon</string>
+    <string name="enter_your_coupon">Enter your coupon</string>
+    <string name="discount">Discount</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="total">Total</string>
 </resources>

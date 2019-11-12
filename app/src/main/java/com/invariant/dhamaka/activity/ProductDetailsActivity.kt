@@ -9,12 +9,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.invariant.dhamaka.R
 import com.invariant.dhamaka.databinding.ActivityProductDetailsBinding
 import com.invariant.dhamaka.viewmodel.ProductDetailsViewModel
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.wtf
 
@@ -38,6 +40,7 @@ class ProductDetailsActivity : BaseActivity(), AnkoLogger {
         carouselImageUrls = ArrayList()
         setupToolbar()
         setupCarouselView()
+        observeShowShoppingCartEvent()
     }
 
     private fun setupToolbar() {
@@ -88,6 +91,15 @@ class ProductDetailsActivity : BaseActivity(), AnkoLogger {
                 .fit()
                 .into(imageView)
         }
+    }
+
+    private fun observeShowShoppingCartEvent() {
+        viewModel.eventShowShoppingCart.observe(this, Observer {
+            if (it) {
+                startActivity<ShoppingCartActivity>()
+                viewModel.shoppingCartShown()
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
