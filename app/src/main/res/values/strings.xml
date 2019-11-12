@@ -56,4 +56,6 @@
     <string name="discount">Discount</string>
     <string name="subtotal">Subtotal</string>
     <string name="total">Total</string>
+    <string name="shoppint_cart">Shopping Cart</string>
+    <string name="proceed_to_checkout">Proceed To Checkout</string>
 </resources>
