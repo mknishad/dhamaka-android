@@ -1,69 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="16dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/separator8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ratingsDescriptionTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:layout_marginStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/ratings"
+        android:textColor="@color/colorTextDark"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/ratingsDescriptionArrowImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator8" />
+
+    <ImageView
+        android:id="@+id/ratingsDescriptionArrowImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+        app:layout_constraintBottom_toTopOf="@id/separator9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator8" />
+
+    <View
+        android:id="@+id/separator9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ratingsDescriptionTitleTextView" />
 
     <TextView
         android:id="@+id/ratingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="4.9"
-        android:text="4.9"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/rubik_medium"
+        android:text="4.9"
         android:textColor="@color/colorTextDark"
         android:textSize="28sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator9"
+        tools:text="4.9" />
 
     <TextView
         android:id="@+id/ratingSubtitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/out_of_5"
         android:fontFamily="@font/rubik_regular"
+        android:text="@string/out_of_5"
         android:textColor="@color/colorText"
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@id/ratingTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ratingTextView"/>
+        app:layout_constraintStart_toEndOf="@id/ratingTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RatingBar
         android:id="@+id/ratingBar"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:numStars="5"
+        android:rating="4.9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/separator9" />
 
     <TextView
         android:id="@+id/totalRatingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="200 Rating"
-        tools:text="200 Rating"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/rubik_regular"
+        android:text="200 Rating"
         android:textColor="@color/colorText"
         android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ratingBar"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        tools:text="200 Rating" />
 
     <TextView
         android:id="@+id/fiveStarTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/_5"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/rubik_regular"
+        android:text="@string/_5"
         android:textColor="@color/colorText"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/totalRatingTextView"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalRatingTextView" />
 
     <ImageView
         android:id="@+id/fiveStarImageView"
@@ -71,10 +120,10 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/ic_star_yellow_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/fiveStarTextView"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toTopOf="@id/fiveStarTextView"
         app:layout_constraintStart_toEndOf="@id/fiveStarTextView"
-        app:layout_constraintBottom_toBottomOf="@id/fiveStarTextView"/>
+        app:layout_constraintTop_toTopOf="@id/fiveStarTextView" />
 
     <ProgressBar
         android:id="@+id/fiveStarProgressBar"
@@ -83,6 +132,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:progress="60"
+        android:progressTint="@color/colorPrimary"
+        android:progressTintMode="src_atop"
         app:layout_constraintBottom_toBottomOf="@id/fiveStarImageView"
         app:layout_constraintEnd_toStartOf="@id/fiveStarPercentageTextView"
         app:layout_constraintStart_toEndOf="@id/fiveStarImageView"
@@ -92,11 +144,232 @@
         android:id="@+id/fiveStarPercentageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        tools:text="70%"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/rubik_regular"
         android:textColor="@color/colorText"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/totalRatingTextView"/>
+        app:layout_constraintTop_toBottomOf="@id/totalRatingTextView"
+        tools:text="60%" />
+
+    <TextView
+        android:id="@+id/fourStarTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:text="@string/_4"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/fiveStarTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fiveStarTextView" />
+
+    <ImageView
+        android:id="@+id/fourStarImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_star_yellow_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/fourStarTextView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/fourStarTextView"
+        app:layout_constraintTop_toTopOf="@id/fourStarTextView" />
+
+    <ProgressBar
+        android:id="@+id/fourStarProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:progress="20"
+        android:progressTint="@color/colorPrimary"
+        android:progressTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@id/fourStarImageView"
+        app:layout_constraintEnd_toStartOf="@id/fourStarPercentageTextView"
+        app:layout_constraintStart_toEndOf="@id/fourStarImageView"
+        app:layout_constraintTop_toTopOf="@id/fourStarImageView" />
+
+    <TextView
+        android:id="@+id/fourStarPercentageTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:gravity="end"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fiveStarPercentageTextView"
+        app:layout_constraintTop_toBottomOf="@id/fiveStarPercentageTextView"
+        tools:text="20%" />
+
+    <TextView
+        android:id="@+id/threeStarTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:text="@string/_3"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/fiveStarTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fourStarTextView" />
+
+    <ImageView
+        android:id="@+id/threeStarImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_star_yellow_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/threeStarTextView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/threeStarTextView"
+        app:layout_constraintTop_toTopOf="@id/threeStarTextView" />
+
+    <ProgressBar
+        android:id="@+id/threeStarProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:progress="10"
+        android:progressTint="@color/colorPrimary"
+        android:progressTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@id/threeStarImageView"
+        app:layout_constraintEnd_toStartOf="@id/threeStarPercentageTextView"
+        app:layout_constraintStart_toEndOf="@id/threeStarImageView"
+        app:layout_constraintTop_toTopOf="@id/threeStarImageView" />
+
+    <TextView
+        android:id="@+id/threeStarPercentageTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:gravity="end"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fiveStarPercentageTextView"
+        app:layout_constraintTop_toBottomOf="@id/fourStarPercentageTextView"
+        tools:text="10%" />
+
+    <TextView
+        android:id="@+id/twoStarTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:text="@string/_2"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/fiveStarTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/threeStarTextView" />
+
+    <ImageView
+        android:id="@+id/twoStarImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_star_yellow_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/twoStarTextView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/twoStarTextView"
+        app:layout_constraintTop_toTopOf="@id/twoStarTextView" />
+
+    <ProgressBar
+        android:id="@+id/twoStarProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:progress="8"
+        android:progressTint="@color/colorPrimary"
+        android:progressTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@id/twoStarImageView"
+        app:layout_constraintEnd_toStartOf="@id/twoStarPercentageTextView"
+        app:layout_constraintStart_toEndOf="@id/twoStarImageView"
+        app:layout_constraintTop_toTopOf="@id/twoStarImageView" />
+
+    <TextView
+        android:id="@+id/twoStarPercentageTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:gravity="end"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fiveStarPercentageTextView"
+        app:layout_constraintTop_toBottomOf="@id/threeStarPercentageTextView"
+        tools:text="8%" />
+
+    <TextView
+        android:id="@+id/oneStarTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:text="@string/_1"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/fiveStarTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/twoStarTextView" />
+
+    <ImageView
+        android:id="@+id/oneStarImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_star_yellow_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/oneStarTextView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/oneStarTextView"
+        app:layout_constraintTop_toTopOf="@id/oneStarTextView" />
+
+    <ProgressBar
+        android:id="@+id/oneStarProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:progress="2"
+        android:progressTint="@color/colorPrimary"
+        android:progressTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@id/oneStarImageView"
+        app:layout_constraintEnd_toStartOf="@id/oneStarPercentageTextView"
+        app:layout_constraintStart_toEndOf="@id/oneStarImageView"
+        app:layout_constraintTop_toTopOf="@id/oneStarImageView" />
+
+    <TextView
+        android:id="@+id/oneStarPercentageTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/rubik_regular"
+        android:gravity="end"
+        android:textColor="@color/colorText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fiveStarPercentageTextView"
+        app:layout_constraintTop_toBottomOf="@id/twoStarPercentageTextView"
+        tools:text="2%" />
 </androidx.constraintlayout.widget.ConstraintLayout>
