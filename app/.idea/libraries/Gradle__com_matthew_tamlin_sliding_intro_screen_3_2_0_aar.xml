@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.matthew-tamlin:sliding-intro-screen:3.2.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4aebb23821beec9bedfebfa842fb2282/jetified-sliding-intro-screen-3.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4aebb23821beec9bedfebfa842fb2282/jetified-sliding-intro-screen-3.2.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.matthew-tamlin/sliding-intro-screen/3.2.0/17b5f880d03522caa30bc2e0475049e815fa0b05/sliding-intro-screen-3.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.matthew-tamlin/sliding-intro-screen/3.2.0/54f74f64a2852c135a6b9cd583498c72e8803e1f/sliding-intro-screen-3.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

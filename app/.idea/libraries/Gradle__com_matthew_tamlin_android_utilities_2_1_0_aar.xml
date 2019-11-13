@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.matthew-tamlin:android-utilities:2.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25ad75f28878b0b285dad0003f3e08f3/jetified-android-utilities-2.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25ad75f28878b0b285dad0003f3e08f3/jetified-android-utilities-2.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.matthew-tamlin/android-utilities/2.1.0/70579aa1a1471e2307fe3203b8c890291fbcfc32/android-utilities-2.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.matthew-tamlin/android-utilities/2.1.0/5cdd0d63c22a912dd451d30ad32dcf25fef4539a/android-utilities-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
