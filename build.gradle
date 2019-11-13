@@ -20,6 +20,11 @@ buildscript {
         version_glide = '4.10.0'
         version_gson = '2.8.6'
         version_material_intro = '2.0.0'
+        version_sliding_intro = '3.2.0'
+        version_carousel_view = '0.1.5'
+        version_picasso = '2.71828'
+        version_lifecycle_extensions = '2.1.0'
+        version_circular_image_view = '4.0.0'
     }
     repositories {
         google()
@@ -27,7 +32,7 @@ buildscript {
         maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:3.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$version_kotlin"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
